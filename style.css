@@ -1,0 +1,151 @@
+	/*:root {
+                --header-image: url('https://sadhost.neocities.org/images/layouts/wp.jpeg');
+                --body-bg-image: url('https://sadhost.neocities.org/images/tiles/purplesky.gif');
+
+                --content: #43256E;
+            }*/
+	body {
+		font-family: 'Nunito', sans-serif;
+		margin: 0;
+		background-color: #000;
+		color: #fceaff;
+		/*background-image: var(--body-bg-image);*/
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+
+	#container {
+		max-width: 900px;
+		/* this is the width of your layout! */
+		/* if you change the above value, scroll to the bottom
+      and change the media query according to the comment! */
+		margin: 0 auto;
+	}
+
+	#container a {
+		color: #ED64F5;
+		font-weight: bold;
+		/* if you want to remove the underline
+      you can add a line below here that says:
+      text-decoration:none; */
+	}
+
+	#header {
+		width: 100%;
+		background-color: #5e4e8c;
+		/* header color here! */
+		height: 150px;
+		/* this is only for a background image! */
+		/* if you want to put images IN the header, 
+      you can add them directly to the <div id="header"></div> element! */
+		background-image: var(--header-image);
+		background-size: 100%;
+	}
+
+	#flex {
+		display: flex;
+	}
+
+	/* this colors BOTH sidebars
+    if you want to style them separately,
+    create styles for #leftSidebar and #rightSidebar */
+	.boxheader {
+	padding: 0;
+	margin: 0;
+	height: 20px;
+	background-color: #707070;
+}
+.boxcontent {
+	padding: 0;
+	
+}
+	aside {
+		background-color: #241445;
+		border: 1px solid white;
+		border-radius: 3px;
+		width: 200px;
+		padding: 20px;
+		font-size: smaller;
+		/* this makes the sidebar text slightly smaller */
+	}
+
+	/* this is the color of the main content area,
+    between the sidebars! */
+	main {
+		background-color: #43256E;
+		border: 1px solid white;
+		border-radius: 3px;
+		flex: 1;
+		padding: 20px;
+		order: 2;
+	}
+
+	#leftSidebar {
+		order: 1;
+	}
+
+	#rightSidebar {
+		order: 3;
+	}
+
+	footer {
+		background-color: #13092D;
+		width: 100%;
+		height: 40px;
+		padding: 10px;
+		text-align: center;
+	}
+
+	h1,
+	h2,
+	h3 {
+		color: #ED64F5;
+	}
+
+	h1 {
+		font-size: 25px;
+	}
+
+	strong {
+		/* this styles bold text */
+		color: #ED64F5;
+	}
+
+	/* BELOW THIS POINT IS MEDIA QUERY */
+	/* so you wanna change the width of your page? 
+    by default, the container width is 900px.
+    in order to keep things responsive, take your new height,
+    and then subtrack it by 100. use this new number as the 
+    "max-width" value below
+    */
+	@media only screen and (max-width: 800px) {
+		#flex {
+			flex-wrap: wrap;
+		}
+
+		aside {
+			width: 100%;
+		}
+
+		/* the order of the items is adjusted here for responsiveness!
+      since the sidebars would be too small on a mobile device.
+      feel free to play around with the order!
+      */
+		main {
+			order: 1;
+		}
+
+		#leftSidebar {
+			order: 2;
+		}
+
+		#rightSidebar {
+			order: 3;
+		}
+
+		#navbar ul {
+			flex-wrap: wrap;
+		}
+	}
